@@ -5,6 +5,7 @@ try
 {
     CustomerService customerService = new();
 
+    // Use Action Del
     customerService.GiveDiscount((message) =>
     {
         Console.WriteLine(message);
@@ -31,6 +32,36 @@ try
                  break;
          }
      }));
+
+    // Use Func
+    customerService.GiveDiscountWithFunc((message) =>
+    {
+        Console.WriteLine(message);
+    },
+    (message) =>
+    {
+        Console.WriteLine(message);
+    },
+     (Customers) => {
+
+         foreach (var customer in Customers)
+         {
+             if (customer.Sales is > 1000)
+             {
+                 return 10;
+             }
+
+             if (customer.Sales is > 2000)
+             {
+                 return 10;
+             }
+         }
+
+         return 0;
+        
+     }
+    );
+
 }
 catch (Exception ex)
 {

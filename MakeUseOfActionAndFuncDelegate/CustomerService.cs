@@ -4,12 +4,17 @@
     {
         public List<Customer> CustomerList { get; set; } = new List<Customer>()
         {
-            new Customer("George", "Papas", "Greee", 0),
-            new Customer("Luigi", "Bianchi", "Italy", 0),
-            new Customer("Michael", "Williams", "USA", 0),
-            new Customer("Amélie", "Rousseau", "France", 0)
+            new Customer("George", "Papas", "Greee", 0, 1000),
+            new Customer("Luigi", "Bianchi", "Italy", 0, 25000),
+            new Customer("Michael", "Williams", "USA", 0, 100000),
+            new Customer("Amélie", "Rousseau", "France", 0, 5000)
         };
-        
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="applyDiscount"></param>
+        /// <param name="discountApplied"></param>
+        /// <param name="discountDelegate"></param>
         public void GiveDiscount(
             Action<string> applyDiscount, 
             Action<string> discountApplied,
@@ -17,29 +22,23 @@
         {
             applyDiscount("applying discount.");
 
-            //foreach (var customer in CustomerList)
-            //{
-            //    if (customer.Country.Equals("Greee"))
-            //    {
-            //        customer.ApllyDiscount(10);
-            //    }
+            discountApplied("discount Applied.");
+        }
 
-            //    if (customer.Country.Equals("Italy"))
-            //    {
-            //        customer.ApllyDiscount(5);
-            //    }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="applyDiscount"></param>
+        /// <param name="discountApplied"></param>
+        /// <param name="calculateDiscountedTotal"></param>
+        public void GiveDiscountWithFunc(
+        Action<string> applyDiscount,
+        Action<string> discountApplied,
+        Func<List<Customer>, decimal> calculateDiscountedTotal)
+        {
+            applyDiscount("applying discount.");
 
-            //    if (customer.Country.Equals("USA"))
-            //    {
-            //        customer.ApllyDiscount(3);
-            //    }
-
-            //    if (customer.Country.Equals("France"))
-            //    {
-            //        customer.ApllyDiscount(2);
-            //    }
-
-            //}
+            decimal total = calculateDiscountedTotal(this.CustomerList);
 
             discountApplied("discount Applied.");
         }
