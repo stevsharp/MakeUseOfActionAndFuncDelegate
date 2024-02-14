@@ -64,8 +64,12 @@ try
     // }
     //);
 
-    CalculatorService calculatorService = new CalculatorService();
 
+    CalculatorFactory calculatorFactory = new(new Calculator(10, 10), new CalculatorService());
+
+    var result = calculatorFactory.Calculate(Operation.Subtract);
+
+    Console.WriteLine($"The result of the operation is {result}");
 }
 catch (Exception ex)
 {

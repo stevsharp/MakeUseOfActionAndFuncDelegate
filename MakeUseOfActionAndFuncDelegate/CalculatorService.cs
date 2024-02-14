@@ -5,9 +5,7 @@ namespace MakeUseOfActionDelegate
 {
     public class CalculatorService
     {
-        protected CalculatorFactory _calculatorFactory = new(new Calculator(0, 0));
-
-        protected Dictionary<Operation, Func<int>> FuncExecute;
+        public Dictionary<Operation, Func<int>> FuncExecute;
 
         protected Func<int> Sum;
 
