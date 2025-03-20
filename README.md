@@ -9,6 +9,9 @@ Custom Actions: Explore how to define and pass custom actions using Action deleg
 Function Composition: Delve into the art of function composition using Func delegates, empowering you to build complex operations from simpler functions.
 Whether you're a seasoned developer looking to expand your skill set or a newcomer eager to learn, our repository has something for everyone. Take your C# programming skills to new heights with Action and Func delegates!
 
+Read more at :
+[https://dev.to/stevsharp/minimal-api-performance-benchmark-14ln](https://dev.to/stevsharp/mastering-action-and-func-delegates-in-c-real-world-patterns-and-examples-5ggp)
+
 ## Connect with Me
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-blue)](https://www.linkedin.com/in/spyros-ponaris-913a6937/)
